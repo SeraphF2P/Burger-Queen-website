@@ -1,0 +1,120 @@
+[
+    {
+        "menu_title":{
+            "pizza": {
+                "pizza piperoni": {
+                    "id": 1,
+                    "price": 10.00,
+                    "img": "./image/food-3.png",
+                    "discount": false
+                },
+                "pizza margareta": {
+                    "id": 2,
+                    "price": 10.00,
+                    "img": "./image/food-3.png",
+                    "discount": false
+                },
+                "pizza salami": {
+                    "id": 3,
+                    "price": 10.00,
+                    "img": "./image/food-3.png",
+                    "discount": false
+                },
+                "pizza vegan": {
+                    "id": 4,
+                    "price": 10.00,
+                    "img": "./image/food-3.png",
+                    "discount": false
+                },
+                "pizza vegetarian": {
+                    "id": 5,
+                    "price": 10.00,
+                    "img": "./image/food-3.png",
+                    "discount": false
+                },
+                "pizza meat": {
+                    "id": 6,
+                    "price": 10.00,
+                    "img": "./image/food-3.png",
+                    "discount": false
+                }
+            },
+            "burgers": {
+                "hamburgers": {
+                    "id": 1,
+                    "price": 10.00,
+                    "img": "./image/food-2.png",
+                    "discount": false
+                },
+                "chessburgers": {
+                    "id": 2,
+                    "price": 10.00,
+                    "img": "./image/food-2.png",
+                    "discount": false
+                },
+                "chickenburgers": {
+                    "id": 3,
+                    "price": 10.00,
+                    "img": "./image/food-2.png",
+                    "discount": false
+                },
+                "beafburgers": {
+                    "id": 4,
+                    "price": 10.00,
+                    "img": "./image/food-2.png",
+                    "discount": false
+                },
+                "blackburgers": {
+                    "id": 5,
+                    "price": 10.00,
+                    "img": "./image/food-2.png",
+                    "discount": false
+                },
+                "doubleburgers": {
+                    "id": 6,
+                    "price": 10.00,
+                    "img": "./image/food-2.png",
+                    "discount": false
+                }
+            },
+            "coffee": {
+                "darkcoffee": {
+                    "id": 1,
+                    "price": 10.00,
+                    "img": "./image/cat-6.png",
+                    "discount": false
+                },
+                "expresso": {
+                    "id": 2,
+                    "price": 10.00,
+                    "img": "./image/cat-6.png",
+                    "discount": false
+                },
+                "capacuino": {
+                    "id": 3,
+                    "price": 10.00,
+                    "img": "./image/cat-6.png",
+                    "discount": false
+                },
+                "starbucks": {
+                    "id": 4,
+                    "price": 10.00,
+                    "img": "./image/cat-6.png",
+                    "discount": false
+                },
+                "coffeemilkchake": {
+                    "id": 5,
+                    "price": 10.00,
+                    "img": "./image/cat-6.png",
+                    "discount": false
+                },
+                "browled coffee": {
+                    "id": 6,
+                    "price": 10.00,
+                    "img": "./image/cat-6.png",
+                    "discount": false
+                }
+            }
+        }
+    }
+]

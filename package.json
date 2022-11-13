@@ -1,0 +1,26 @@
+{
+  "name": "fast-food-resturant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeraphF2P/fast-food-resturant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SeraphF2P/fast-food-resturant/issues"
+  },
+  "homepage": "https://github.com/SeraphF2P/fast-food-resturant#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.2",
+    "fontawesome": "^5.6.3",
+    "reset.css": "^2.0.2",
+    "tsconfig.json": "^1.0.11",
+    "typescript": "^4.8.4"
+  }
+}
