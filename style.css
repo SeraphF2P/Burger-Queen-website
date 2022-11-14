@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
-  border: none;
+  border: 0;
   text-decoration: none;
 }
 
@@ -102,38 +102,87 @@ header .form_section .log_in_section .modal-dialog-centered .modal-content .row:
   width: 100px;
 }
 header .form_section .sign_up_section .modal-dialog-centered {
-  width: 100vw;
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+header .form_section .sign_up_section .modal-dialog-centered .modal-content {
+  width: 300px;
+  height: 430px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+header .form_section .sign_up_section .modal-dialog-centered .modal-content .progress_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 50px;
+  padding: 0;
+  width: 200px;
+  height: 24px;
+  margin: 1rem auto;
+}
+header .form_section .sign_up_section .modal-dialog-centered .modal-content .progress_bar span {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-header .form_section .sign_up_section .modal-dialog-centered .modal.fade.show {
-  height: auto;
-}
-header .form_section .sign_up_section .modal-dialog-centered .modal-content {
-  width: auto;
-}
-header .form_section .sign_up_section .modal-dialog-centered form.modal-body {
   font-size: 1.3rem;
-  background-color: white;
-  border: 2px solid black;
-  display: flex;
-  width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 0 1rem 3px rgba(0, 0, 0, 0.1), 0 0 1rem -3px rgba(0, 0, 0, 0.1);
-  padding: 12px;
-  gap: 0.5em;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #ffd279;
+  z-index: 1;
+  outline: 2px solid #d6110a;
+  font-weight: bolder;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: 5s;
 }
-header .form_section .sign_up_section .modal-dialog-centered form.modal-body .row:last-of-type {
+header .form_section .sign_up_section .modal-dialog-centered .modal-content .progress_bar span.confirmed {
+  -webkit-animation: confirmed 1s forwards;
+          animation: confirmed 1s forwards;
+}
+header .form_section .sign_up_section .modal-dialog-centered .modal-content .progress_bar .line {
+  display: block;
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  width: 200px;
+  background-color: #d6110a;
+}
+header .form_section .sign_up_section .modal-dialog-centered .modal-content .form_btns {
+  width: 300px;
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
   display: flex;
   justify-content: space-around;
-  flex-direction: row;
-  flex-wrap: nowrap;
 }
-header .form_section .sign_up_section .modal-dialog-centered form.modal-body .row:last-of-type .btn {
-  width: 40%;
-  padding: 5px;
+header .form_section .sign_up_section .modal-dialog-centered .modal-content .form_btns .btn {
+  width: 100px;
+}
+header .form_section .sign_up_section .modal-dialog-centered .modal-content .modal-body {
+  position: relative;
+  width: 100%;
+  display: flex;
+  padding-top: 4rem;
+}
+header .form_section .sign_up_section .modal-dialog-centered .modal-content .modal-body .steps_bodys {
+  display: flex;
+  position: absolute;
+  left: 0;
+  transition: transform 0.4s linear;
+}
+header .form_section .sign_up_section .modal-dialog-centered .modal-content .modal-body .steps_bodys .step_body {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 2rem;
+  padding-inline: 25px;
+  gap: 2rem;
 }
 header .form_section .btn_close {
   background-color: white;
@@ -304,6 +353,17 @@ main .available_to_purchase .card .fa-heart:hover {
   font-size: 2rem;
 }
 
+@-webkit-keyframes confirmed {
+  to {
+    background-color: #cf3d02;
+  }
+}
+
+@keyframes confirmed {
+  to {
+    background-color: #cf3d02;
+  }
+}
 * > .section:not(:first-child) {
   transition: transform 1s linear, opacity 0.5s linear;
   transform: translateY(20px);
@@ -423,6 +483,9 @@ main .section .in_section_img {
   position: relative;
   left: 0;
   top: 0px;
+}
+main .section .in_section_img.big_screen {
+  display: none;
 }
 main .section:first-child .in_section_img {
   width: 100%;
@@ -597,6 +660,12 @@ footer .social_media_links li a:hover {
     width: 150%;
     height: 100%;
   }
+  section.section:first-child .in_section_img.small_screen {
+    display: none;
+  }
+  section.section:first-child .in_section_img.big_screen {
+    display: block;
+  }
   section.section.gallary ul {
     display: grid;
     grid-template-columns: repeat(3, minmax(140px, auto));
@@ -624,7 +693,7 @@ footer .social_media_links li a:hover {
   header .accordion-body {
     position: fixed;
     top: 0;
-    left: 200px;
+    left: calc((100vw - 500px) / 2);
     width: 500px;
     height: 70px;
     border-top: 0;

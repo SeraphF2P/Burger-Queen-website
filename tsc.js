@@ -43,35 +43,49 @@ heart_icons.forEach(heart => heart.addEventListener('click', activate));
 const menu_section = [];
 const card = document.createElement('div');
 const available_to_purchase = document.querySelector('.available_to_purchase');
-fetch("./data.json")
-    .then((res) => { return res.json(); })
-    .then(data => {
-    for (let i = 0; i < Object.keys(data[0].menu_title).length; i++) {
-        menu_section.push(Object.keys(data[0].menu_title));
+const form_btns = document.querySelector('.form_btns');
+const btn_next = form_btns === null || form_btns === void 0 ? void 0 : form_btns.querySelector('.btn_next');
+const btn_prev = form_btns === null || form_btns === void 0 ? void 0 : form_btns.querySelector('.btn_prev');
+const steps_bodys = document.querySelector('.steps_bodys');
+const sign_up_section = document.querySelector('.sign_up_section');
+const step_body_num_1 = sign_up_section === null || sign_up_section === void 0 ? void 0 : sign_up_section.querySelector('.step_body.num_1');
+const step_body_num_2 = sign_up_section === null || sign_up_section === void 0 ? void 0 : sign_up_section.querySelector('.step_body.num_2');
+const step_body_num_3 = sign_up_section === null || sign_up_section === void 0 ? void 0 : sign_up_section.querySelector('.step_body.num_3');
+const forms_input_1 = Array.from(step_body_num_1.querySelectorAll('input'));
+const forms_input_2 = Array.from(step_body_num_2.querySelectorAll('input'));
+const forms_input_3 = Array.from(step_body_num_3.querySelectorAll('input'));
+const progress_bar = sign_up_section === null || sign_up_section === void 0 ? void 0 : sign_up_section.querySelector('.progress_bar');
+const step_1 = progress_bar === null || progress_bar === void 0 ? void 0 : progress_bar.querySelector('.step_1');
+const step_2 = progress_bar === null || progress_bar === void 0 ? void 0 : progress_bar.querySelector('.step_2');
+const step_3 = progress_bar === null || progress_bar === void 0 ? void 0 : progress_bar.querySelector('.step_3');
+let slide_value = 0;
+function slideX_pre() {
+    steps_bodys.style.transform = `translateX( ${slide_value.toLocaleString()}px)`;
+    if (slide_value != 0 && slide_value != -600) {
+        slide_value += 300;
     }
-    console.log(menu_section);
-    card.innerHTML = `
-    <div class="card">
-    <div class="stars">
-      <i class="fas fa-star"></i><i class="fas fa-star"></i
-      ><i class="fas fa-star"></i><i class="fas fa-star"></i
-      ><i class="fas fa-star"></i>
-    </div>
-    <img src="./image/menu-2.png" alt="" class="product_img" />
-    <div class="product_info">
-      <h2 class="item_name">pizza</h2>
-      <div class="price_section">
-        <span class="price">00.00</span>$
-      </div>
-      <div class="num_of_items">
-        <img
-          src="./image/icon-minus.svg"
-          alt="minus icon"
-        /><span>0</span
-        ><img src="./image/icon-plus.svg" alt="plus icon" />
-      </div>
-    </div>
-    <div class="fas fa-heart"></div>
-  </div>
-   `;
-});
+}
+const submit_btn = document.createElement('input');
+submit_btn.setAttribute('type', 'submit');
+submit_btn.setAttribute('class', 'btn btn-primary btn_next');
+submit_btn.setAttribute('for', '.modal-body');
+function slideX_next() {
+    if (forms_input_1 === null || forms_input_1 === void 0 ? void 0 : forms_input_1.every(input => { return input.checkValidity(); })) {
+        steps_bodys.style.transform = 'translate(-300px)';
+        step_1.classList.add('confirmed');
+        slide_value = 0;
+        if (forms_input_2 === null || forms_input_2 === void 0 ? void 0 : forms_input_2.every(input => { return input.checkValidity(); })) {
+            steps_bodys.style.transform = 'translate(-600px)';
+            step_2.classList.add('confirmed');
+            slide_value = -300;
+            if (forms_input_3 === null || forms_input_3 === void 0 ? void 0 : forms_input_3.every(input => { return input.checkValidity(); })) {
+                steps_bodys.style.transform = 'translate(-900px)';
+                step_3.classList.add('confirmed');
+                slide_value = -600;
+                btn_next.replaceWith(submit_btn);
+            }
+        }
+    }
+}
+btn_prev === null || btn_prev === void 0 ? void 0 : btn_prev.addEventListener('click', slideX_pre);
+btn_next === null || btn_next === void 0 ? void 0 : btn_next.addEventListener('click', slideX_next);

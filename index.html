@@ -180,93 +180,126 @@
         >
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-              <form class="row g-3 modal-body">
-                <div class="form-floating">
-                  <input
-                    id="full_name_input"
-                    type="text"
-                    class="form-control"
-                    placeholder="full name"
-                    aria-label="full name"
-                    max="30"
-                    pattern="\w{3,}\s\w{3,}\s\w{3,}"
-                    required
-                  />
-                  <label for="full_name_input">full name</label>
-                </div>
-                <div class="form-floating">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="floatingInput"
-                    placeholder="name@example.com"
-                    required
-                  />
-                  <label for="floatingInput">Email address</label>
-                </div>
-                <div class="form-floating">
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="floatingPassword"
-                    placeholder="Password"
-                    min="8"
-                    max="12"
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])"
-                    required
-                  />
-                  <label for="floatingPassword">Password</label>
-                </div>
-                <div class="col-12 form-floating">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="inputAddress"
-                    placeholder="address"
-                  />
-                  <label for="inputAddress" class="form-label">address</label>
-                </div>
+              <div class="progress_bar">
+                <span class="step_1">1</span>
+                <span class="step_2">2</span>
+                <span class="step_3">3</span>
+                <div class="line"></div>
+              </div>
+              <form method="post" action="#" class="modal-body">
+                <div class="steps_bodys">
+                  <div class="step_body num_1">
+                    <div class="form-floating">
+                      <input
+                        id="full_name_input"
+                        type="text"
+                        class="form-control"
+                        placeholder="full name"
+                        aria-label="full name"
+                        max="30"
+                        pattern="\w{3,}\s\w{3,}(\s\w{3,})?"
+                        required
+                      />
+                      <label for="full_name_input">full name</label>
+                    </div>
+                    <div class="form-floating">
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="floatingInput_email"
+                        placeholder="name@example.com"
+                        required
+                      />
+                      <label for="floatingInput_email">Email address</label>
+                    </div>
+                  </div>
+                  <div class="step_body num_2">
+                    <div class="form-floating">
+                      <input
+                        type="password"
+                        class="form-control"
+                        placeholder="Password"
+                        id="floatingPassword"
+                        min="8"
+                        max="15"
+                        required
+                      />
+                      <label for="floatingPassword">Password</label>
+                    </div>
+                    <!-- <div class="form-floating">
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="floatingPassword_confirm"
+                      placeholder="Confirm Password"
+                      min="8"
+                      max="12"
+                      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])"
+                      required
+                    />
+                    <label for="floatingPassword_confirm">Password</label>
+                  </div> -->
+                  </div>
 
-                <div class="col-12 form-floating">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="inputAddress2"
-                    placeholder="Apartment, studio, or floor"
-                  />
-                  <label for="inputAddress2" class="form-label"
-                    >Apartment, studio, or floor</label
-                  >
-                </div>
+                  <div class="step_body num_3">
+                    <div class="col-12 form-floating">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputAddress"
+                        placeholder="address"
+                        required
+                      />
+                      <label for="inputAddress" class="form-label"
+                        >address</label
+                      >
+                    </div>
 
-                <div class="row">
-                  <div class="col-5">
-                    <label for="inputCity" class="form-label">City</label>
-                    <input type="text" class="form-control" id="inputCity" />
+                    <div class="col-12 form-floating">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputAddress2"
+                        placeholder="Apartment, studio, or floor"
+                      />
+                      <label for="inputAddress2" class="form-label"
+                        >Apartment, studio, or floor</label
+                      >
+                    </div>
+
+                    <div class="row">
+                      <div class="col-5">
+                        <label for="inputCity" class="form-label">City</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputCity"
+                        />
+                      </div>
+                      <div class="col-5">
+                        <label for="inputState" class="form-label">State</label>
+                        <select id="inputState" class="form-select">
+                          <option selected>Choose...</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                      <div class="col-2">
+                        <label for="inputZip" class="form-label">Zip</label>
+                        <input type="text" class="form-control" id="inputZip" />
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-5">
-                    <label for="inputState" class="form-label">State</label>
-                    <select id="inputState" class="form-select">
-                      <option selected>Choose...</option>
-                      <option>...</option>
-                    </select>
+                  <div class="step_body num_3">
+                    <h1>you're all set to go</h1>
                   </div>
-                  <div class="col-2">
-                    <label for="inputZip" class="form-label">Zip</label>
-                    <input type="text" class="form-control" id="inputZip" />
-                  </div>
-                </div>
-                <div class="row">
-                  <button
-                    type="button"
-                    class="btn btn-secondary btn_close"
-                    data-bs-dismiss="modal"
-                  >
-                    Close
-                  </button>
-                  <input type="submit" class="btn" value="Save" />
                 </div>
               </form>
+              <div class="form_btns">
+                <button type="button" class="btn btn-secondary btn_prev">
+                  Preview
+                </button>
+                <button class="btn btn-primary btn_next">Next</button>
+              </div>
             </div>
           </div>
         </div>
@@ -275,7 +308,8 @@
     </header>
     <main class="container-lg">
       <section class="section">
-        <img src="" alt="" class="in_section_img" />
+        <img src="./images/pexels-rajesh-tp-1633495.jpg" alt="" class="in_section_img big_screen" />
+        <img src="./images/pexels-valeria-boltneva-1639565.jpg" alt="" class="in_section_img small_screen" />
         <article>
           <span>Welcome to Burger Queen</span>
           <h1>New menu with new dishies added every week</h1>
@@ -304,7 +338,7 @@
         </ul>
       </section>
       <section class="section">
-        <img src="" alt="" class="in_section_img" />
+        <img src="./images/pexels-pixabay-208537.jpg" alt="" class="in_section_img" />
         <article>
           <span>Welcome to Burger Queen</span>
           <h1>New menu with new dishies added every week</h1>
@@ -411,9 +445,7 @@
                 />
 
                 <h1 class="this_menu_section_title">Pizza</h1>
-                <section class="available_to_purchase">
-            
-                </section>
+                <section class="available_to_purchase"></section>
               </div>
               <div class="carousel-item">
                 <img

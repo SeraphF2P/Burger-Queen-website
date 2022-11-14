@@ -90,45 +90,127 @@ header {
         }
       }
     }
-
     .sign_up_section {
       .modal-dialog-centered {
-        width: 100vw;
-        height: 100vh;
         display: flex;
         justify-content: center;
-        align-items: center;
-        .modal.fade.show {
-          height: auto;
-        }
         .modal-content {
-          width: auto;
-        }
-        form.modal-body {
-          font-size: 1.3rem;
-          background-color: white;
-          border: 2px solid black;
-          display: flex;
-          width: 400px;
+          width: 300px;
+          height: 430px;
           border-radius: 10px;
-          box-shadow: global.$shadow;
-          padding: 12px;
-          gap: 0.5em;
-          .row {
-            &:last-of-type {
+          overflow: hidden;
+          .progress_bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 50px;
+            padding: 0;
+            width: 200px;
+            height: 24px;
+            margin: 1rem auto;
+            span {
               display: flex;
-              justify-content: space-around;
-              flex-direction: row;
-              flex-wrap: nowrap;
-              .btn {
-                width: 40%;
-                padding: 5px;
+              justify-content: center;
+              align-items: center;
+              font-size: 1.3rem;
+              width: 32px;
+              height: 32px;
+              border-radius: 50%;
+              background-color: global.$fourth-color;
+              z-index: 1;
+              outline: 2px solid global.$primary-color;
+              font-weight: bolder;
+              backface-visibility: hidden;
+              transition: 5s;
+              &.confirmed {
+                animation: confirmed 1s forwards;
+              }
+            }
+            .line {
+              display: block;
+              position: absolute;
+              top: 50%;
+              height: 2px;
+              width: 200px;
+              background-color: global.$primary-color;
+            }
+          }
+          .form_btns {
+            width: 300px;
+            position: absolute;
+            bottom: 2rem;
+            left: 0;
+            display: flex;
+            justify-content: space-around;
+            .btn {
+              width: 100px;
+            }
+          }
+          .modal-body {
+            position: relative;
+            width: 100%;
+            display: flex;
+            padding-top: 4rem;
+            .steps_bodys {
+              display: flex;
+              position: absolute;
+              left: 0;
+              transition: transform 0.4s linear;
+              .step_body {
+                width: 300px;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding-top: 2rem;
+                padding-inline: 25px;
+                gap: 2rem;
               }
             }
           }
         }
       }
     }
+    // .sign_up_section {
+    //   .modal-dialog-centered {
+    //     width: 100vw;
+    //     height: 100vh;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     .modal.fade.show {
+    //       height: auto;
+    //     }
+    //     .modal-content {
+    //       width: auto;
+    //     }
+    //     form.modal-body {
+    //       font-size: 1.3rem;
+    //       background-color: white;
+    //       border: 2px solid black;
+    //       display: flex;
+    //       width: 400px;
+    //       border-radius: 10px;
+    //       box-shadow: global.global.$shadow;
+    //       padding: 12px;
+    //       gap: 0.5em;
+    //       .row {
+    //         &:last-of-type {
+    //           display: flex;
+    //           justify-content: space-around;
+    //           flex-direction: row;
+    //           flex-wrap: nowrap;
+    //           .btn {
+    //             width: 40%;
+    //             padding: 5px;
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
     .btn_close {
       background-color: white;
       border-color: global.$soft-gray;
@@ -148,7 +230,7 @@ header {
         width: 100%;
         cursor: pointer;
         a:hover {
-          color: global.$primary-color;
+          color:global.$primary-color;
         }
       }
     }
@@ -246,7 +328,7 @@ main {
       width: 272px;
       height: 178px;
       border: 0;
-      background: global.$soft-gray;
+      background:global.$soft-gray;
       .stars {
         display: flex;
         flex-direction: column;
@@ -312,5 +394,11 @@ main {
         }
       }
     }
+  }
+}
+
+@keyframes confirmed {
+  to {
+    background-color: #cf3d02;
   }
 }
