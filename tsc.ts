@@ -3,20 +3,6 @@ const accordion_btn = document.querySelector('.accordion-button') as HTMLElement
 hamburger_menu.onclick =()=>{
     accordion_btn.click()
 }
-
-// document.querySelector('.home').onmousemove = (e) =>{
-
-//     let x = (window.innerWidth - e.pageX * 2) / 90;
-//     let y = (window.innerHeight - e.pageY * 2) / 90;
-
-//     document.querySelector('.home .home-parallax-img').style.transform = `translateX(${y}px) translateY(${x}px)`;
-// }
-
-// document.querySelector('.home').onmouseleave = () =>{
-
-//     document.querySelector('.home .home-parallax-img').style.transform = `translateX(0px) translateY(0px)`;
-// }   
-
 const search_btn = document.querySelector('.fa-magnifying-glass')as HTMLElement;
 const search_section = document.querySelector('.search_section');
 search_btn.onclick = ()=>{
@@ -62,54 +48,19 @@ heart_icons.forEach(heart => heart.addEventListener('click',activate));
 const menu_section: any[] = []
 const card = document.createElement('div');
 const available_to_purchase = document.querySelector('.available_to_purchase')
-// fetch("./data.json")
-//   .then((res) =>{return res.json()})
-//   .then(data=> 
-//   {
 
-// for (let i = 0; i <  Object.keys(data[0].menu_title).length; i++) {
-//   menu_section.push(Object.keys(data[0].menu_title))
-  
-// }
-//     // data[0].
-//     // carousel-item
-//     console.log(menu_section);
-//     card.innerHTML= `
-//     <div class="card">
-//     <div class="stars">
-//       <i class="fas fa-star"></i><i class="fas fa-star"></i
-//       ><i class="fas fa-star"></i><i class="fas fa-star"></i
-//       ><i class="fas fa-star"></i>
-//     </div>
-//     <img src="./image/menu-2.png" alt="" class="product_img" />
-//     <div class="product_info">
-//       <h2 class="item_name">pizza</h2>
-//       <div class="price_section">
-//         <span class="price">00.00</span>$
-//       </div>
-//       <div class="num_of_items">
-//         <img
-//           src="./image/icon-minus.svg"
-//           alt="minus icon"
-//         /><span>0</span
-//         ><img src="./image/icon-plus.svg" alt="plus icon" />
-//       </div>
-//     </div>
-//     <div class="fas fa-heart"></div>
-//   </div>
-//    `
-//   }
-   
-  
-
-//    )
+const sign_up_form = document.getElementById('sign_up') as HTMLFormElement;
 const form_btns = document.querySelector('.form_btns')
 
 const btn_next = form_btns?.querySelector('.btn_next') as HTMLButtonElement;
 const btn_prev = form_btns?.querySelector('.btn_prev') as HTMLButtonElement;
+const btn_close = form_btns?.querySelector('.btn_close') as HTMLButtonElement;
 
 const steps_bodys = document.querySelector('.steps_bodys') as HTMLElement;
 const sign_up_section = document.querySelector('.sign_up_section');
+const floatingPassword = document.getElementById('floatingPassword') as HTMLInputElement;
+const floatingPassword_confirm = document.getElementById('floatingPassword_confirm')as HTMLInputElement;
+const password_confirm_error_message = document.querySelector('.input_error_message.confirm_password') as HTMLParagraphElement;
 
 const step_body_num_1 = sign_up_section?.querySelector('.step_body.num_1');
 const step_body_num_2 = sign_up_section?.querySelector('.step_body.num_2');
@@ -130,25 +81,44 @@ function slideX_pre(){
         if(slide_value != 0 && slide_value != -600){
             slide_value += 300;
         }
+        if( slide_value = -600){
+            submit_btn.replaceWith(btn_next)
+        }
 }
 const submit_btn = document.createElement('input');
 submit_btn.setAttribute('type','submit');
 submit_btn.setAttribute('class','btn btn-primary btn_next');
-submit_btn.setAttribute('for','.modal-body')
+submit_btn.setAttribute('form','sign_up')
 function slideX_next (){
+    // if(forms_input_1?.every(input =>{return input.checkValidity()}) == false){
+
+    // }
 if(forms_input_1?.every(input =>{return input.checkValidity()}) ){
     steps_bodys.style.transform = 'translate(-300px)';
     step_1.classList.add('confirmed');
+    btn_close.innerText = 'Preview';
+    btn_close.removeAttribute('data-bs-dismiss')
+    btn_close.classList.remove('btn_close')
     slide_value = 0;
-    if(forms_input_2?.every(input =>{return input.checkValidity()}) ){
+    if(floatingPassword.value != floatingPassword_confirm.value){
+        password_confirm_error_message.style.display = 'block'
+        }
+    if(forms_input_2?.every(input =>{return input.checkValidity()}) && floatingPassword.value == floatingPassword_confirm.value){
         steps_bodys.style.transform = 'translate(-600px)'
         step_2.classList.add('confirmed');
         slide_value = -300;
+        password_confirm_error_message.style.display = 'none'
         if(forms_input_3?.every(input =>{return input.checkValidity()})){
-            steps_bodys.style.transform = 'translate(-900px)';
-            step_3.classList.add('confirmed');
-            slide_value = -600;
             btn_next.replaceWith(submit_btn)
+            submit_btn.addEventListener('click',(e)=>{
+                e.preventDefault()
+                steps_bodys.style.transform = 'translate(-900px)';
+                step_3.classList.add('confirmed');
+                slide_value = -600;
+                setTimeout(()=> sign_up_form.submit(),500)
+               
+            })
+         
         }
     }
 }

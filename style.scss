@@ -117,7 +117,7 @@ main {
       position: relative;
       left: 0;
       top: 0px;
-      &.big_screen{
+      &.big_screen {
         display: none;
       }
     }
@@ -260,6 +260,7 @@ footer {
     justify-content: center;
     margin-top: 3rem;
     width: 100%;
+    padding: 0;
     li {
       width: 40px;
       height: 40px;
@@ -294,10 +295,10 @@ footer {
       .in_section_img {
         width: 150%;
         height: 100%;
-        &.small_screen{
+        &.small_screen {
           display: none;
         }
-        &.big_screen{
+        &.big_screen {
           display: block;
         }
       }
