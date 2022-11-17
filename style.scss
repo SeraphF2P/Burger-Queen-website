@@ -17,6 +17,9 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  // background-image: url("./images/QueenBurger_background.webp");
+  background-image: url("./images/Queen_Burfer_background2.webp");
+  background-repeat: repeat;
 }
 header {
   width: 100vw;
@@ -37,7 +40,7 @@ header {
     background: white;
     display: flex;
     justify-content: space-between;
-    box-shadow: global.$shadow-bottom;
+    box-shadow: global.$shadow-out;
     .logo {
       width: 60px;
       height: 40px;
@@ -90,12 +93,14 @@ main {
     width: 100%;
     max-width: 900px;
     margin: 2rem auto;
+    &:not(.gallary) {
+      box-shadow: global.$shadow-out;
+    }
     article {
       display: flex;
       gap: 0.5rem;
       flex-direction: column;
       width: 100%;
-      margin-top: 1rem;
       span {
         color: global.$secondary-color;
         font-family: global.$font-family-1;
@@ -140,6 +145,7 @@ main {
         width: 100%;
         row-gap: 0.5rem;
         padding: 0;
+        margin-top: 1rem;
         li {
           width: 140px;
           height: 140px;

@@ -27,7 +27,7 @@ header .search_section {
   min-height: 300px;
   background: white;
   border-top: 1px solid;
-  box-shadow: 0px 4px 1rem -5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 4px 1rem -5px rgba(0, 0, 0, 0.5);
   transition: transform 0.5s linear;
 }
 header .search_section.show {
@@ -217,7 +217,7 @@ header input:focus:invalid + p.input_error_message {
   background-color: white;
   width: 100vw;
   border-top: 1px solid;
-  box-shadow: 0px 4px 1rem -5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 4px 1rem -5px rgba(0, 0, 0, 0.5);
 }
 .accordion-body .accordion_menu {
   display: flex;
@@ -316,18 +316,27 @@ main .available_to_purchase .product_card {
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 4px 1rem -5px rgba(0, 0, 0, 0.5);
+  background: white;
+  box-shadow: 16px 16px 1rem rgba(0, 0, 0, 0.5), inset 0px 0px 1rem -8px rgba(0, 0, 0, 0.5);
+}
+main .available_to_purchase .product_card::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 1rem -8px rgba(0, 0, 0, 0.5);
 }
 main .available_to_purchase .product_card:hover .product_info {
   transform: translateY(0);
 }
 main .available_to_purchase .product_card .product_img {
-  width: 112px;
-  height: 112px;
+  width: 137px;
   position: absolute;
-  top: 8px;
-  left: 8px;
+  top: 24px;
+  left: 11px;
 }
 main .available_to_purchase .product_card .product_info {
   display: flex;
@@ -397,6 +406,8 @@ html::-webkit-scrollbar {
 body {
   display: flex;
   flex-direction: column;
+  background-image: url("./images/Queen_Burfer_background2.webp");
+  background-repeat: repeat;
 }
 
 header {
@@ -419,7 +430,7 @@ header nav {
   background: white;
   display: flex;
   justify-content: space-between;
-  box-shadow: 0px 4px 1rem -5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1rem 4px rgba(0, 0, 0, 0.1), 0 0 1rem -4px rgba(0, 0, 0, 0.1);
 }
 header nav .logo {
   width: 60px;
@@ -472,12 +483,14 @@ main .section {
   max-width: 900px;
   margin: 2rem auto;
 }
+main .section:not(.gallary) {
+  box-shadow: 0 0 1rem 4px rgba(0, 0, 0, 0.1), 0 0 1rem -4px rgba(0, 0, 0, 0.1);
+}
 main .section article {
   display: flex;
   gap: 0.5rem;
   flex-direction: column;
   width: 100%;
-  margin-top: 1rem;
 }
 main .section article span {
   color: #fbe03b;
@@ -521,6 +534,7 @@ main .section.gallary ul {
   width: 100%;
   row-gap: 0.5rem;
   padding: 0;
+  margin-top: 1rem;
 }
 main .section.gallary ul li {
   width: 140px;

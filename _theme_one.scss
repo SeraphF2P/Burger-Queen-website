@@ -6,8 +6,8 @@ $white-color: #e3e3e3;
 $black-color: #171120;
 $soft-gray: rgb(0, 0, 0, 0.2);
 $border: 1rem solid rgb(0, 0, 0, 0.2);
-$shadow-bottom: 0px 4px 1rem -5px rgba(0, 0, 0, 0.5);
-$shadow: 0 0 1rem 3px rgb(0, 0, 0, 0.1), 0 0 1rem -3px rgb(0, 0, 0, 0.1);
+// $shadow: 0px 4px 1rem -5px rgba(0, 0, 0, 0.5);
+$shadow-out: 0 0 1rem 4px rgb(0, 0, 0, 0.1), 0 0 1rem -4px rgb(0, 0, 0, 0.1);
 
 $bright-hover-effect: inset 0 0 1rem 4rem rgb(255, 255, 255, 0.3);
 $font-family-1: Arial, Helvetica, sans-serif;
