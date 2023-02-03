@@ -430,7 +430,7 @@ header nav {
   background: white;
   display: flex;
   justify-content: space-between;
-  box-shadow: 0 0 1rem 4px rgba(0, 0, 0, 0.1), 0 0 1rem -4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 1rem 4px rgba(0, 0, 0, 0.2);
 }
 header nav .logo {
   width: 60px;
@@ -484,7 +484,9 @@ main .section {
   margin: 2rem auto;
 }
 main .section:not(.gallary) {
-  box-shadow: 0 0 1rem 4px rgba(0, 0, 0, 0.1), 0 0 1rem -4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 1rem 4px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
 }
 main .section article {
   display: flex;

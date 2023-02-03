@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
     "target": "ES2017",
     "module": "CommonJS",
     "lib": ["dom", "es6", "es2017", "esnext.asynciterable"],

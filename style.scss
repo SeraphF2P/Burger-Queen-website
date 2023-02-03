@@ -17,7 +17,6 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  // background-image: url("./images/QueenBurger_background.webp");
   background-image: url("./images/Queen_Burfer_background2.webp");
   background-repeat: repeat;
 }
@@ -95,6 +94,7 @@ main {
     margin: 2rem auto;
     &:not(.gallary) {
       box-shadow: global.$shadow-out;
+      backdrop-filter: blur(3px);
     }
     article {
       display: flex;
